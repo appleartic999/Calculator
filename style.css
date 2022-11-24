@@ -54,12 +54,7 @@ button:hover {
     background-color: #FFA500;
 }
 
-#zero {
-    width: 160px;
-    border-radius: 50px;
-}
-
-#reset:hover, #sign:hover, #percentage-mod:hover, .number:hover, .dot:hover {
+#reset:hover, #sign:hover, #percentage-mod:hover, .number:hover, .dot:hover, #backward:hover {
     color: grey;
     background-color: white;
 }
