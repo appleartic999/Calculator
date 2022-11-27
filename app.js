@@ -1,4 +1,4 @@
-let current = "", currentValue = 0, operator = "", result = 0;
+let current = "", currentValue = 0, operator = "";
 let dotIsPressed = false;
 let arr = [];//acts as a QUEUE data structure to evaluate values
 function evaluate() {
@@ -17,6 +17,8 @@ function evaluate() {
             } else {
                 currentValue /= arr[2];
             }
+        }else{
+            currentValue=arr[2];
         }
     }
     arr = [currentValue, arr[1]];
@@ -29,9 +31,6 @@ function myFunc(e) {
         if (operator !== "") {
             arr[1] = operator;
             operator = "";
-        }
-        if(current===0){
-            current="";
         }
         current += btnPressed.innerText;
         document.getElementById('current').innerText = `${current}`;
@@ -52,13 +51,8 @@ function myFunc(e) {
                 arr = [];
                 document.getElementById('result').innerText = `Ans= ${currentValue}`;
                 document.getElementById('current').innerText = "";
-            } else if (btnPressed.id === "reset") {
-                currentValue = 0;
-                arr = [];
-                current = "";
-                document.getElementById('result').textContent = `0`;
-                document.getElementById('current').textContent = "0";
             } else {
+                if(operator==="AC")operator="";
                 document.getElementById('result').innerText = `${currentValue} ${operator}`;
                 document.getElementById('current').innerText = "";
             }
@@ -66,11 +60,16 @@ function myFunc(e) {
         }
     } else if (btnPressed.id === "backward") {
         current = current.slice(0, -1);
-        if (current.length === 0) current = 0;
         document.getElementById('current').innerText = `${current}`;
     } else if (btnPressed.id === "clear") {
         current = "";
         document.getElementById('current').innerText = `0`;
+    } else if (btnPressed.id === "reset") {
+        currentValue = 0;
+        arr = [];
+        current = "";
+        document.getElementById('result').textContent = `0`;
+        document.getElementById('current').textContent = "0";
     }
 }
 
