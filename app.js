@@ -32,7 +32,7 @@ function myFunc(e) {
             arr[1] = operator;
             operator = "";
         }
-        if (current.length <= 18)
+        if (current.length <= 12)
             current += btnPressed.innerText;
         document.getElementById('current').innerText = `${current}`;
     } else if (btnPressed.className === "dot" && dotIsPressed === false) {
