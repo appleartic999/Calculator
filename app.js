@@ -17,8 +17,8 @@ function evaluate() {
             } else {
                 currentValue /= arr[2];
             }
-        }else{
-            currentValue=arr[2];
+        } else {
+            currentValue = arr[2];
         }
     }
     arr = [currentValue, arr[1]];
@@ -32,7 +32,8 @@ function myFunc(e) {
             arr[1] = operator;
             operator = "";
         }
-        current += btnPressed.innerText;
+        if (current.length <= 18)
+            current += btnPressed.innerText;
         document.getElementById('current').innerText = `${current}`;
     } else if (btnPressed.className === "dot" && dotIsPressed === false) {
         current += ".";
@@ -52,7 +53,7 @@ function myFunc(e) {
                 document.getElementById('result').innerText = `Ans= ${currentValue}`;
                 document.getElementById('current').innerText = "";
             } else {
-                if(operator==="AC")operator="";
+                if (operator === "AC") operator = "";
                 document.getElementById('result').innerText = `${currentValue} ${operator}`;
                 document.getElementById('current').innerText = "";
             }
