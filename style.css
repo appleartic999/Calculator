@@ -25,10 +25,12 @@ p {
 
 #result {
     font-size: 26px;
+    height: 30px;
 }
 
 #current {
     font-size: 36px;
+    height: 40px;
 }
 
 button {
@@ -40,6 +42,10 @@ button {
     border-radius: 50%;
     margin: 6px;
     font-size: 32px;
+}
+
+#clear {
+    font-size: 26px;
 }
 
 button:hover {
@@ -54,7 +60,11 @@ button:hover {
     background-color: #FFA500;
 }
 
-#reset:hover, #sign:hover, #percentage-mod:hover, .number:hover, .dot:hover, #backward:hover {
+#reset:hover, #sign:hover, #percentage:hover, .number:hover, .dot:hover, #backward:hover, #clear:hover {
     color: grey;
     background-color: white;
+}
+#reset{
+    background-color: grey;
+    color: white;
 }
